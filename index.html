@@ -20,6 +20,7 @@
 
   <div id="app">
     <div class="main-wrapper">
+      <h1>{{title}}</h1>
       <div class="container">
 
         <div @mouseover="stopAutoplay()" @mouseout="startAutoplay()" class="slider">
@@ -29,7 +30,7 @@
         </div>
 
         <div class="thumbs">
-          <div @click="counter = index" v-for="(image,index) in images" class="thumb">
+          <div @click="counter = index" v-for="(image,index) in images" class="thumb" :class="{'current' : counter === index}">
             <img :src="'assets/img/' + image">
           </div>
         </div>

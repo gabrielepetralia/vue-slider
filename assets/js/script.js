@@ -4,6 +4,7 @@ const root = document.querySelector(':root');
 createApp({
   data() {
     return {
+      title : "GAMES SLIDER",
       images: [
         "01.webp",
         "02.webp",
@@ -38,7 +39,7 @@ createApp({
 
     stopAutoplay(){
       clearInterval(autoplay);
-    }
+    },
   },
 
   mounted(){
