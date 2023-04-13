@@ -12,18 +12,25 @@ createApp({
         "05.webp",
       ],
       numThumbs : 0,
+      counter : 0,
     }
   },
 
   methods: {
     setThumbsHeight(){
       this.numThumbs = this.images.length;
-      root.style.setProperty("--numThumbs", this.numThumbs)
+      root.style.setProperty("--numThumbs", this.numThumbs);
+    },
+
+    nextPrev(isNext){
+      isNext ? this.counter++ : this.counter--;
+      if(this.counter === this.images.length) this.counter = 0;
+      if(this.counter < 0) this.counter = this.images.length - 1;
     }
   },
 
   mounted(){
-    this.setThumbsHeight()
+    this.setThumbsHeight();
   }
 }).mount("#app");
 
