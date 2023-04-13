@@ -29,11 +29,11 @@
         </div>
 
         <div class="thumbs">
-          <div v-for="image in images" class="thumb">
+          <div @click="counter = index" v-for="(image,index) in images" class="thumb">
             <img :src="'assets/img/' + image">
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
