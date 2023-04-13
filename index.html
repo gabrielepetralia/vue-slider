@@ -8,15 +8,35 @@
   <!-- Vue -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Vue Slider</title>
 </head>
 <body>
 
   <div id="app">
-    
+    <div class="main-wrapper">
+      <div class="container">
+        <div class="slider">
+          <img src="assets/img/01.webp">
+          <i class="btn-nav btn-nav-down fa-solid fa-chevron-down"></i>
+          <i class="btn-nav btn-nav-up fa-solid fa-chevron-up"></i>
+        </div>
+        <div class="thumbs">
+          <div v-for="image in images" class="thumb">
+            <img :src="'assets/img/' + image">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+<!-- :style="{height : altezza}" -->
