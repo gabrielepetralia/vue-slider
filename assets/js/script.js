@@ -26,11 +26,19 @@ createApp({
       isNext ? this.counter++ : this.counter--;
       if(this.counter === this.images.length) this.counter = 0;
       if(this.counter < 0) this.counter = this.images.length - 1;
+    },
+    
+    startAutoplay(){
+      setInterval(() => {
+        this.counter++;
+        if(this.counter === this.images.length) this.counter = 0;
+      }, 3000);
     }
   },
 
   mounted(){
     this.setThumbsHeight();
+    this.startAutoplay();
   }
 }).mount("#app");
 
