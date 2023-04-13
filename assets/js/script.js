@@ -13,6 +13,7 @@ createApp({
       ],
       numThumbs : 0,
       counter : 0,
+      autoplay : null,
     }
   },
 
@@ -29,10 +30,14 @@ createApp({
     },
     
     startAutoplay(){
-      setInterval(() => {
+      autoplay = setInterval(() => {
         this.counter++;
         if(this.counter === this.images.length) this.counter = 0;
       }, 3000);
+    },
+
+    stopAutoplay(){
+      clearInterval(autoplay);
     }
   },
 

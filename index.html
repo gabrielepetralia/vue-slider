@@ -22,7 +22,7 @@
     <div class="main-wrapper">
       <div class="container">
 
-        <div class="slider">
+        <div @mouseover="stopAutoplay()" @mouseout="startAutoplay()" class="slider">
           <img :src="'assets/img/' + images[counter]">
           <i @click="nextPrev(false)" class="btn-nav btn-nav-up fa-solid fa-chevron-up"></i>
           <i @click="nextPrev(true)" class="btn-nav btn-nav-down fa-solid fa-chevron-down"></i>
