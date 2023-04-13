@@ -30,7 +30,7 @@
         </div>
 
         <div class="thumbs">
-          <div @click="counter = index" v-for="(image,index) in images" class="thumb" :class="{'current' : counter === index}">
+          <div @click="counter = index" v-for="(image,index) in images" class="thumb" :class="{'thumb-overlay' : counter !== index}">
             <img :src="'assets/img/' + image">
           </div>
         </div>
